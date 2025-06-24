@@ -1,0 +1,29 @@
+#To check openAI services in a resource group:
+az cognitiveservices account list --resource-group AzureAIResourceGroupMoumita -o table
+
+#To create azure cognitive service deployment
+az cognitiveservices account deployment create \
+   -g AzureAIResourceGroupMoumita \
+   -n AzureOpenAIMoumita \
+   --deployment-name text-embedding-ada-002 \
+   --model-name text-embedding-ada-002 \
+   --model-version "2"  \
+   --model-format OpenAI \
+   --sku-name "Standard" \
+   --sku-capacity 5
+
+#To create a new deployment of the gpt-4o model
+az cognitiveservices account deployment create \
+   -g AzureAIResourceGroupMoumita \
+   -n AzureOpenAIMoumita \
+   --deployment-name gpt-4o \
+   --model-name gpt-4o \
+   --model-version "2024-05-13" \
+   --model-format OpenAI \
+   --sku-name "Standard" \
+   --sku-capacity 5
+
+
+#Install pip
+ pip install openai==1.65.2
+
